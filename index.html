@@ -76,6 +76,8 @@
         const addTaskBtn = document.getElementById("addTask");
         const listElemet = document.getElementById("taskList");
         const clearAllBtn = document.getElementById("clearAll");
+        const arr = [];
+        clearAllBtn.style.display = "none";
 
         addTaskBtn.addEventListener("click",addTask);
         clearAllBtn.addEventListener("click", () => listElemet.innerHTML = "");
@@ -101,12 +103,15 @@
                 deleteBtn.addEventListener("click", () => {
                     listItem.remove();
                 });
-
+               deleteBtn.style.background = "red";
                 listItem.appendChild(span);
                 listItem.appendChild(deleteBtn);
-
+       
                 taskList.appendChild(listItem);
-
+                   arr.push(listItem);
+                 if (arr.length >1 ) {
+                     clearAllBtn.style.display = "inline";
+        }
                 taskInput.value = "";
         }
     </script>
