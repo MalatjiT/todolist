@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <style>
-        body {
+        * {
+            box-sizing:border-box;
+        }
+        div {
             font-family: Arial, Helvetica, sans-serif;
             background: #f9f9f9;
             padding: 40px;
@@ -62,15 +65,15 @@
     </style>
 </head>
 <body>
+    <div>
     <h1>MY TO-DO LIST</h1>
-    <div id="container">
     <input type="text" id="taskInput" placeholder="Enter a task">
     <button id="addTask">Add Task</button>
     <button id="clearAll">Clear All</button>
-    </div>
+    
 
     <ul id="taskList"></ul>
-
+    </div>
     <script>
         const taskInput = document.getElementById("taskInput");
         const addTaskBtn = document.getElementById("addTask");
